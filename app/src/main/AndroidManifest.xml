@@ -12,6 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CineView">
         <activity
+            android:name=".SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MovieDetails"
             android:exported="false" />
         <activity
@@ -19,13 +27,15 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.App.Starting">
+            android:exported="false"
+            android:theme="@style/Theme.App.Starting"
+            tools:ignore="IntentFilterExportedReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+            <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 
