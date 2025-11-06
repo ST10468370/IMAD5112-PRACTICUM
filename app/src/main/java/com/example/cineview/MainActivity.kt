@@ -13,8 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-private fun findViewById(id: Any) {
-}
+
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -65,6 +64,9 @@ class MainActivity : AppCompatActivity() {
         }
         btnNext.setOnClickListener {
             startActivity(Intent(this, SecondActivity2::class.java))
+        }
+        btnExit.setOnClickListener {
+            finishAffinity()
         }
 
     }

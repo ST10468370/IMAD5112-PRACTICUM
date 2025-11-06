@@ -1,6 +1,8 @@
 package com.example.cineview
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +17,14 @@ class SecondActivity2 : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        findViewById<Button>(R.id.btnList).setOnClickListener {
+            val movielist = MainActivity.packingList
+            val msg = movielist.joinToString ("\n"){"${it.nameofmovie}(x${it.nameofdirector}(x${it.rating}" }
+            Toast.makeText(this,msg.ifEmpty { "List is empty" }, Toast.LENGTH_LONG).show()
+        }
+        findViewById<Button>(R.id.btnBack).setOnClickListener {
+            finish()
         }
     }
 }
